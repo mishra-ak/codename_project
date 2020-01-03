@@ -1,0 +1,22 @@
+{
+    "manifest_version":2,
+    "name": "Tag replacer",
+    "description": "This extension replaces the clicked tag content",
+    "version": "0.1",
+  
+    "content_scripts":[{
+        "js":["jquery-3.4.1.min.js","content.js"],
+        "matches":["https://stackoverflow.com/*","http://stackoverflow.com/*"]
+    }],
+
+    "background":{
+        "scripts":["background.js"]
+    },
+
+    "browser_action":{
+      "default_icon":"icon.png",
+      "default_popup":"popup.html",
+      "default_title":"This is the my 2nd popup"
+    }
+  
+  }
