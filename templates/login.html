@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h2 style="text-align: center;">Login To Proceed</h2>
+<br>
+<br>
+<form action="{{url_for('login')}}" method="post">
+    <div style = "text-align: center;">
+        <label for="ip">Enter your Name:</label>
+        <input type="text" name = "ip">
+        <br>
+        <br>
+        <label for="passwd">Enter your Registration Number:</label>
+        <input type="password" name = "passwd">
+    </div>    
+    <br>
+    <br>
+    <button type="submit" style="margin: auto;display:block;">Login</button>
+</form>
+{% endblock %}
