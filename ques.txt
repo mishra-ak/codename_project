@@ -1,0 +1,6 @@
+Q1 Can random forest classifier handle categorical variables in python?
+Q2 How can I avoid a missing 1 required positional argument: 'inputs' error in cross validation?
+Q3 Decision Tree Learning - Terminal Node
+Q4 Logistic regression classification - machine learning
+Q5 Building a multi-class image classifier using python
+
