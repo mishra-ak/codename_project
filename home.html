@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
+    <title>StackOverflow QTag</title>
+</head>
+    <body>
+    <!--Header-->
+    <nav class="navbar navbar-expand-md navbar-custom justify-content-center sticky-top">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">QTag Predictor</a>
+    </nav>
+    <br>
+    <!--Mid Section-->
+
+    <div class="container-fluid mt">
+        <br>
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Ask a public question</h2>
+                <br>
+                <p>Post your question below to find its tag</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!--Form Group-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <form action="/action_page.php">
+                    <div class="form-group">
+                      <label for="title" style="font-weight: bolder;">Title:</label>
+                      <p style="font-size:small;">Be specific and imagine you’re asking a question to another person</p>
+                      <input type="text" class="form-control border border-dark" id="title" placeholder="Enter The Title" name="title">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                      <label for="body" style="font-weight: bolder;">Body:</label>
+                      <p style="font-size:small;">*Optional</p>
+                      <textarea type="text" class="form-control border border-dark" rows="10" id="body" placeholder="Describe your Question" name="body"></textarea>
+                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <div onclick = "myFunction()" class="btn btn-block btn-primary">Find the tags</div>
+                    <textarea cols="36" rows="19" class="border border-dark rounded-left rounded-right" 
+                    id="demo"></textarea>
+                </div>
+            </div>    
+      </div>
+      </div>
+
+
+    <!--Footer-->
+    <footer class="footer">
+        <h4 style="text-align: center;"> Members of this Project</h4>
+        <div class="container-fluid">
+            <br>
+            <div class="row">
+                <div class="col">
+                    <h5 style="text-align: left;">AKSHAY&nbsp;&nbsp;MISRA</h5>
+                    <p style="text-align: left;">Registration Num:&nbsp;&nbsp;RA1611003030337</p>
+                    <p style="text-align: left;">Email Id:&nbsp;&nbsp;mishraakshay859@gmail.com</p>
+                    <p style="text-align: left;">Place:&nbsp;&nbsp;Lucknow</p>
+                </div>
+                <div class="col">
+                    <h5 style="text-align: left;">ANCHAL&nbsp;&nbsp;GUPTA</h5>
+                    <p style="text-align: left;">Registration Num:&nbsp;&nbsp;RA1611003030336</p>
+                    <p style="text-align: left;">Email Id:&nbsp;&nbsp;anchalgupta97@gmail.com</p>
+                    <p style="text-align: left;">Place&nbsp;&nbsp;Delhi</p>
+                </div>
+                <div class="col">
+                    <h5 style="text-align: left;">SHUBHAM &nbsp;&nbsp;SHARMA</h5>
+                    <p style="text-align: left;">Registration Num:&nbsp;&nbsp;RA1611003030357</p>
+                    <p style="text-align: left;">Email Id:&nbsp;&nbsp;shubham97@gmail.com</p>
+                    <p style="text-align: left;">Place:&nbsp;&nbsp;Lucknow</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function myFunction(){
+            var s = document.getElementById("title").value;
+            var array = s.split(" ");
+            var len = array.length;
+            var s = " ";
+            for (var i =0; i<len; i++){
+                if (array[i] == "visualize"|| array[i] == "Visualization"){
+                    s = "matplotlib"+"  "+"seaborn"+"  "+"machine learning";
+                    break;
+                }
+                if (array[i] == "neural"|| array[i] == "Neural"|| array[i]=="image"){
+                    s = "keras"+"      "+"tensorflow"+"     "+"deep learning";
+                    break;
+                }
+                if (array[i] == "dataframe" || array[i] == "Dataframe"){
+                    s = "pandas"+"  "+"machine learning";
+                    break;
+                }
+                if (array[i] == "forest"){
+                    s = "sklearn"+"  "+"machine learning";
+                    break;
+                }
+                if (array[i] == "forest" || array[i]== "Tree"|| array[i]=="regression"){
+                    s = "sklearn"+"    "+"machine learning";
+                    break;
+                }
+            } 
+            document.getElementById("demo").innerHTML = s;
+        }
+    </script>
+
+    </body>
+</html>
